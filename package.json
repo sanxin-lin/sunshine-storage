@@ -1,0 +1,46 @@
+{
+  "name": "sunshine-storage",
+  "version": "1.0.0-beta.2",
+  "description": "像 storage 一样去使用 indexedDB",
+  "main": "dist/index.min.js",
+  "module": "dist/index.esm.js",
+  "author": "sunshine_lin",
+  "type": "module",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "storage",
+    "indexedDB",
+    "localForage",
+    "local-forage"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/lodash": "^4.14.197",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.2",
+    "rollup": "^3.28.0",
+    "rollup-plugin-dts": "^6.0.0",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "@rollup/plugin-json": "^6.0.0",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sanxin-lin/local-forage.git"
+  }
+}
