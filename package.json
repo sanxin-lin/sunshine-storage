@@ -1,6 +1,6 @@
 {
   "name": "sunshine-storage",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "像 storage 一样去使用 indexedDB",
   "main": "dist/index.min.js",
   "module": "dist/index.esm.js",

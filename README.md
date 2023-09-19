@@ -21,6 +21,7 @@
 
 这是一个解决 Storage 存储空间过小而出现的库，他的特点体现在：
 
+- **支持多种存储类型：** 基础类型、对象、ArrayBuffer、Blob
 - **支持降级：** 优先使用 indexedDB，如果浏览器不支持则自动降级为 Storage(可选 localStorage、sessionStorage)
 - **异步操作：** 无论是 indexedDB，还是 Storage，操作都是异步
 - **使用方式：** 使用方式与 Storage 方式相同，主要支持以下方法
@@ -108,6 +109,8 @@ fn();
 
 这三个参数，只有在浏览器不支持 indexedDB，降级为 Storage 时才有意义，由于 indexedDB 可以用 name 来进行隔离，但是 Storage 不行，所以使用了 prefix、suffix 来进行数据隔离
 
+> 当你存储对象、数组、Set、Map时，不需要序列化再存储，可以直接存储直接取值~
+
 ```ts
 // 创建实例
 const sg = storage.createInstance({
@@ -122,6 +125,13 @@ const sg = storage.createInstance({
 使用方式，与上面一样，promise 方式使用
 
 ```ts
+// 设值 引用类型不需要序列化
+sg.setItem('obj', { a: 1, b: 2 }).then(() => {
+  // 取值 直接取
+  sg.getItem('obj').then((res) => {
+    console.log(res) // { a: 1, b: 2 }
+  }
+})
 // 设值
 sg.setItem('name', 'lsx').then(() => {
   // 取值
