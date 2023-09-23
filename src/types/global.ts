@@ -6,7 +6,7 @@ export interface IGlobal extends Window {
 }
 
 export interface IOptions {
-  name: string;
+  name?: string;
   suffix?: string;
   prefix?: string;
   storage?: Storage;
