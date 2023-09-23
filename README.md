@@ -109,6 +109,8 @@ fn();
 
 这三个参数，只有在浏览器不支持 indexedDB，降级为 Storage 时才有意义，由于 indexedDB 可以用 name 来进行隔离，但是 Storage 不行，所以使用了 prefix、suffix 来进行数据隔离
 
+如果你不想要用 indexedDB，你也可以设置 `  forceStorage = true `，来强制使用 Storage 进行存储
+
 > 当你存储对象、数组、Set、Map时，不需要序列化再存储，可以直接存储直接取值~
 
 ```ts

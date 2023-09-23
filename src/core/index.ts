@@ -4,9 +4,9 @@ import { IndexedDB } from './indexedDB';
 import { StorageClass } from './storage';
 
 const createInstance = (options: IOptions) => {
-  const { name } = options;
+  const { name, foceStorage } = options;
 
-  if (isSupportIndexedDB()) {
+  if (isSupportIndexedDB() && !foceStorage) {
     return new IndexedDB({ name, version: 1, store: { name: 'sunshine_indexeddb_store' } });
   }
 

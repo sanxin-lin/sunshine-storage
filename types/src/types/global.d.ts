@@ -9,4 +9,5 @@ export interface IOptions {
     suffix?: string;
     prefix?: string;
     storage?: Storage;
+    foceStorage?: boolean;
 }
